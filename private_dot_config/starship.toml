@@ -1,0 +1,14 @@
+format = "$all"
+
+[character]
+success_symbol = "[ﬦ](bold green)" 
+
+[directory]
+truncation_length = 6
+truncate_to_repo = false
+truncation_symbol = ".../"
+
+[env_var]
+variable = "TAB"
+style = "white"
+format = '[( $env_value)]($style) '
