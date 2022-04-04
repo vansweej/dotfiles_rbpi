@@ -1,3 +1,3 @@
 #!/usr/bin/env sh
 
-eval "$(starship init bash)"
+echo 'eval "$(starship init bash)"' >> ~/.bashrc
