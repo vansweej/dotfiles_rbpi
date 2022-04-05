@@ -1,4 +1,4 @@
-story#!/usr/bin/env sh
+#!/usr/bin/env sh
 
 echo "Updating system"
 sudo apt -y update
