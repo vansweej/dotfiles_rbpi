@@ -11,7 +11,7 @@ sudo apt -y install neofetch conky conky-std
 sudo apt -y install ripgrep fzf bat direnv
 
 # install font stuff for st terminal
-sudo apt -y libfontconfig-dev libharfbuzz-dev libxft-dev
+sudo apt -y install libfontconfig-dev libharfbuzz-dev libxft-dev
 
 sudo add-apt-repository -y ppa:neovim-ppa/stable
 sudo apt -y update
