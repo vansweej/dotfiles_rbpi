@@ -18,6 +18,7 @@
 import XMonad
 import Data.Monoid
 import System.Exit
+import XMonad.Util.SpawnOnce ( spawnOnce )
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
@@ -290,7 +291,8 @@ myLogHook = return ()
 -- It will add initialization of EWMH support to your custom startup
 -- hook by combining it with ewmhDesktopsStartup.
 --
-myStartupHook = return ()
+myStartupHook = do
+    spawnOnce "feh --bg-scale ~/.config/wallpapers/yosemite-lowpoly.jpg"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
