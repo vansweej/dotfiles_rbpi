@@ -18,3 +18,6 @@ sudo apt -y update
 sudo apt -y install neovim
 
 sudo apt -y install lightdm xmonad libghc-xmonad-contrib-dev feh picom
+
+
+echo 'neofetch' >> ~/.bashrc
