@@ -292,7 +292,10 @@ myLogHook = return ()
 -- hook by combining it with ewmhDesktopsStartup.
 --
 myStartupHook = do
+    spawn "xsetroot -cursor_name left_ptr"
     spawnOnce "feh --bg-scale ~/.config/wallpapers/yosemite-lowpoly.jpg"
+--    spawnOnce "picom --experimental-backends"
+    spawnOnce "picom"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
