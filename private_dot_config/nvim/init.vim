@@ -161,6 +161,11 @@ colorscheme night-owl
 " Use this for dark color schemes
 set background=dark
 
+" transparent bg
+ autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
+ autocmd vimenter * hi EndOfBuffer guibg=NONE ctermbg=NONE
+
+
 " enable plugins
 lua require('vansweej')
 
