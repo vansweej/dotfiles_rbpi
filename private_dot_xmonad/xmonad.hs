@@ -360,7 +360,7 @@ defaults = defaultConfig {
         mouseBindings      = myMouseBindings,
 
       -- hooks, layouts
-        layoutHook         = gaps [(L,0), (R,0), (U,10), (D,0)] $ spacingRaw False (Border 10 10 10 10) True (Border 10 10 10 10) True $ smartBorders $ myLayout,
+        layoutHook         = gaps [(L,10), (R,10), (U,25), (D,10)] $ spacingRaw True (Border 10 10 10 10) True (Border 10 10 10 10) True $ smartBorders $ myLayout,
         -- layoutHook         = spacingRaw False (Border 10 10 10 10) True (Border 10 10 10 10) True $ smartBorders $ myLayout,
         manageHook         = myManageHook,
         handleEventHook    = myEventHook,
