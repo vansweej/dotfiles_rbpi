@@ -17,7 +17,7 @@ sudo add-apt-repository -y ppa:neovim-ppa/stable
 sudo apt -y update
 sudo apt -y install neovim
 
-sudo apt -y install lightdm xmonad libghc-xmonad-contrib-dev feh picom
+sudo apt -y install lightdm xmonad libghc-xmonad-contrib-dev feh picom xmobar
 
 
 echo 'neofetch' >> ~/.bashrc
