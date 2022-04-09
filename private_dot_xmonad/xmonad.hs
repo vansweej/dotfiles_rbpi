@@ -26,7 +26,7 @@ import XMonad.Hooks.ManageDocks
 
 import Control.Monad ( join, when )
 import XMonad.Layout.NoBorders
-import XMonad.Layout.Spacing ( spacingRaw, Border(Border) )
+import XMonad.Layout.Spacing ( spacingRaw, spacing, Border(Border) )
 import XMonad.Layout.Gaps
     ( Direction2D(D, L, R, U),
       gaps,
