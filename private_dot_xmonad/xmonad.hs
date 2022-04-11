@@ -16,13 +16,17 @@
 --
 
 import XMonad
+import System.Exit
+import System.IO
 import XMonad.Layout.Fullscreen
     ( fullscreenEventHook, fullscreenManageHook, fullscreenSupport, fullscreenFull )
 import Data.Monoid
 import System.Exit
 import XMonad.Util.Run
 import XMonad.Util.SpawnOnce
+import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
+import XMonad.Actions.WorkspaceNames
 
 import Control.Monad ( join, when )
 import XMonad.Layout.NoBorders
@@ -94,6 +98,24 @@ myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
 --
 myNormalBorderColor  = "#dddddd"
 myFocusedBorderColor = "#ff0000"
+
+{-
+  Xmobar configuration variables. These settings control the appearance
+  of text which xmonad is sending to xmobar via the DynamicLog hook.
+-}
+
+myTitleColor     = "#727788"  -- color of window title
+myTitleLength    = 20         -- truncate window title to this length
+myCurrentWSColor = "#4CAD64"  -- color of active workspace
+myVisibleWSColor = "#B8904C"  -- color of inactive workspace
+myUrgentWSColor  = "#C2465F"  -- color of workspace with 'urgent' window
+myCurrentWSLeft  = "["        -- wrap active workspace with these
+myCurrentWSRight = "]"
+myVisibleWSLeft  = "("        -- wrap inactive workspace with these
+myVisibleWSRight = ")"
+myUrgentWSLeft  = "{"         -- wrap urgent workspace with these
+myUrgentWSRight = "}"
+
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -306,7 +328,14 @@ myEventHook = mempty
 -- It will add EWMH logHook actions to your custom log hook by
 -- combining it with ewmhDesktopsLogHook.
 --
-myLogHook = return ()
+myLogHook xmproc = dynamicLogWithPP $ xmobarPP {
+        ppOrder = \(ws:l:t:_)   -> [ws]
+      , ppOutput = hPutStrLn xmproc
+      , ppTitle = xmobarColor myTitleColor "" . shorten myTitleLength
+      , ppCurrent = xmobarColor myCurrentWSColor "" . wrap myCurrentWSLeft myCurrentWSRight
+      , ppVisible = xmobarColor myVisibleWSColor "" . wrap myVisibleWSLeft myVisibleWSRight
+      , ppUrgent = xmobarColor myUrgentWSColor "" . wrap myUrgentWSLeft myUrgentWSRight
+    }
 
 ------------------------------------------------------------------------
 -- Startup hook
@@ -335,7 +364,7 @@ myStartupHook = do
 --
 main = do
     xmproc <- spawnPipe "xmobar -x 0 ~/.config/xmobar/xmobar.conf"
-    xmonad $ docks defaults
+    xmonad $ docks $ defaults xmproc
 
 -- A structure containing your configuration settings, overriding
 -- fields in the default config. Any you don't override, will
@@ -343,7 +372,7 @@ main = do
 --
 -- No need to modify this.
 --
-defaults = defaultConfig {
+defaults xmproc = defaultConfig {
       -- simple stuff
         terminal           = myTerminal,
         focusFollowsMouse  = myFocusFollowsMouse,
@@ -364,6 +393,6 @@ defaults = defaultConfig {
         layoutHook         = gaps [(L,10), (R,10), (U,34), (D,10)] $ spacing 10 $ myLayout,
         manageHook         = myManageHook,
         handleEventHook    = myEventHook,
-        logHook            = myLogHook,
+        logHook            = myLogHook xmproc,
         startupHook        = myStartupHook
     }
