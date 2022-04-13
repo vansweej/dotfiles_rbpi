@@ -390,7 +390,7 @@ defaults xmproc = defaultConfig {
 
       -- hooks, layouts
         --layoutHook         = gaps [(L,10), (R,10), (U,25), (D,10)] $ spacingRaw False (Border 10 10 10 10) False (Border 10 10 10 10) True $ smartBorders $ myLayout,
-        layoutHook         = gaps [(L,10), (R,10), (U,34), (D,10)] $ spacing 10 $ myLayout,
+        layoutHook         = gaps [(L,10), (R,10), (U,33), (D,10)] $ spacing 10 $ myLayout,
         manageHook         = myManageHook,
         handleEventHook    = myEventHook,
         logHook            = myLogHook xmproc,
