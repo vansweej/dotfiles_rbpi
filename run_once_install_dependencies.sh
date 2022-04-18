@@ -10,6 +10,9 @@ sudo apt -y install wmctrl x11-utils cmake git-lfs build-essential libsdl2-dev l
 sudo apt -y install htop neofetch conky conky-std 
 sudo apt -y install ripgrep fzf bat direnv
 
+# install x2go remote desktop
+sudo apt -y install x2goserver
+
 # install font stuff for st terminal
 sudo apt -y install libfontconfig-dev libharfbuzz-dev libxft-dev
 
