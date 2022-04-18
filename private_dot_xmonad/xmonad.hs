@@ -30,6 +30,7 @@ import XMonad.Actions.WorkspaceNames
 
 import Control.Monad ( join, when )
 import XMonad.Layout.NoBorders
+import XMonad.Layout.ThreeColums
 import XMonad.Layout.Spacing ( spacingRaw, spacing, Border(Border) )
 import XMonad.Layout.Gaps
     ( Direction2D(D, L, R, U),
