@@ -11,7 +11,7 @@ sudo apt -y install htop neofetch conky conky-std
 sudo apt -y install ripgrep fzf bat direnv
 
 # install x2go remote desktop
-sudo apt -y install x2goserver
+sudo apt -y install x2goserver lightdm-gtk-greeter lightdm-gtk-greeter-settings
 
 # install font stuff for st terminal
 sudo apt -y install libfontconfig-dev libharfbuzz-dev libxft-dev
