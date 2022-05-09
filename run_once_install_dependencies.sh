@@ -16,6 +16,8 @@ sudo apt -y install x2goserver lightdm-gtk-greeter lightdm-gtk-greeter-settings
 # install font stuff for st terminal
 sudo apt -y install libfontconfig-dev libharfbuzz-dev libxft-dev
 
+sudo add-apt-repository -y ppa:neovim-ppa/unstable
+sudo apt-get -y update
 sudo apt -y install neovim
 
 sudo apt -y install lightdm xmonad libghc-xmonad-contrib-dev feh picom xmobar
