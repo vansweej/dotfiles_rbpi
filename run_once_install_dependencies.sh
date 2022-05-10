@@ -11,7 +11,7 @@ sudo apt -y install htop neofetch conky conky-std
 sudo apt -y install ripgrep fzf bat direnv
 
 # install x2go remote desktop
-sudo apt -y install x2goserver lightdm-gtk-greeter lightdm-gtk-greeter-settings
+#sudo apt -y install x2goserver lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings
 
 # install font stuff for st terminal
 sudo apt -y install libfontconfig-dev libharfbuzz-dev libxft-dev
@@ -20,7 +20,7 @@ sudo add-apt-repository -y ppa:neovim-ppa/unstable
 sudo apt-get -y update
 sudo apt -y install neovim
 
-sudo apt -y install lightdm xmonad libghc-xmonad-contrib-dev feh picom xmobar
+sudo apt -y install xmonad libghc-xmonad-contrib-dev feh picom xmobar
 
 
 echo 'neofetch' >> ~/.bashrc
