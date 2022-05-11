@@ -366,7 +366,7 @@ myStartupHook = do
     spawnOnce "volumeicon"
 
 
-    spawn ("sleep 2 && trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --transparent true --alpha 0 " ++ colorTrayer ++ " --height 22")
+    --spawn ("sleep 2 && trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --transparent true --alpha 0 " ++ colorTrayer ++ " --height 22")
 
     spawn "xsetroot -cursor_name left_ptr"
     spawnOnce "feh --bg-scale /usr/share/backgrounds/pop/nasa-53884.jpg"
