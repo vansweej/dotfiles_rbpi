@@ -358,7 +358,7 @@ myLogHook xmproc = dynamicLogWithPP $ xmobarPP {
 --
 myStartupHook = do
     spawn "xsetroot -cursor_name left_ptr"
-    spawnOnce "feh --bg-scale ~/.config/wallpapers/yosemite-lowpoly.jpg"
+    spawnOnce "feh --bg-scale /usr/share/backgrounds/pop/nasa-53884.jpg"
 --    spawnOnce "picom --experimental-backends"
     spawnOnce "picom"
 
