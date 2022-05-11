@@ -118,6 +118,8 @@ myVisibleWSRight = ")"
 myUrgentWSLeft  = "{"         -- wrap urgent workspace with these
 myUrgentWSRight = "}"
 
+colorTrayer :: String
+colorTrayer = "--tint 0x011627"
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -357,6 +359,15 @@ myLogHook xmproc = dynamicLogWithPP $ xmobarPP {
 -- hook by combining it with ewmhDesktopsStartup.
 --
 myStartupHook = do
+    spawn "killall conky"   -- kill current conky on each restart
+    spawn "killall trayer"  -- kill current trayer on each restart
+
+    spawnOnce "nm-applet"
+    spawnOnce "volumeicon"
+
+
+    spawn ("sleep 2 && trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --transparent true --alpha 0 " ++ colorTrayer ++ " --height 22")
+
     spawn "xsetroot -cursor_name left_ptr"
     spawnOnce "feh --bg-scale /usr/share/backgrounds/pop/nasa-53884.jpg"
 --    spawnOnce "picom --experimental-backends"

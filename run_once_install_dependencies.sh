@@ -20,7 +20,7 @@ sudo add-apt-repository -y ppa:neovim-ppa/unstable
 sudo apt-get -y update
 sudo apt -y install neovim
 
-sudo apt -y install xmonad libghc-xmonad-contrib-dev feh picom xmobar
+sudo apt -y install xmonad libghc-xmonad-contrib-dev feh picom xmobar trayer volumeicon-alsa
 
 
 echo 'neofetch' >> ~/.bashrc
