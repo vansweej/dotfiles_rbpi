@@ -96,7 +96,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 
 " vim-fugitive
-Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-fugitive'
 
 " gitsigns
 Plug 'lewis6991/gitsigns.nvim'
