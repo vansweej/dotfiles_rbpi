@@ -91,12 +91,11 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do': 'make' }
 
 " Lightline
 Plug 'itchyny/lightline.vim'
-
 " indent blankline
 Plug 'lukas-reineke/indent-blankline.nvim'
 
 " vim-fugitive
-" Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive', { 'tag': 'v3.6' }
 
 " gitsigns
 Plug 'lewis6991/gitsigns.nvim'
